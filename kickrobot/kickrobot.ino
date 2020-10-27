@@ -6,7 +6,7 @@
 #define FINAL_VALUE 90
 #define INITIAL_VALUE 0
 
-#define DELAY_VALUE 1000
+#define DELAY_VALUE 200
 
 Servo servo1; 
 Servo servo2;
@@ -24,8 +24,9 @@ void writeServoPin(unsigned int servoMotor1Value, unsigned int servoMotor2Value,
 }
 
 void runFullCycle() {
-  writeServoPin(INITIAL_VALUE, FINAL_VALUE, true);
   writeServoPin(FINAL_VALUE, INITIAL_VALUE, true);
+  writeServoPin(INITIAL_VALUE, FINAL_VALUE, true);
+  delay(3000);
 }
 
 void loop() {
